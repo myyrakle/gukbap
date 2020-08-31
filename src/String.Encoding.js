@@ -46,6 +46,10 @@ String.fromUTF16Array = function (array) {
     return String.fromCharCode(...array);
 };
 
+String.fromUTF32Array = function (array) {
+    return "";
+};
+
 String.prototype.toUTF8Array = function () {
     const utf8 = [];
     for (let i = 0; i < this.length; i++) {
@@ -85,5 +89,34 @@ String.prototype.toUTF16Array = function () {
     for (let i = 0; i < this.length; i++) {
         arr[i] = this.charCodeAt(i);
     }
+    return arr;
+};
+
+String.prototype.toUTF32Array = function () {
+    const highSurrogateValue = parseInt("1101100000000000", 2);
+    const lowSurrogateValue = parseInt("1101110000000000", 2);
+
+    let arr = [];
+
+    for (let i = 0; i < this.length; i++) {
+        let code = this.charCodeAt(i);
+
+        if ((code & highSurrogateValue) == highSurrogateValue) {
+            i++;
+
+            if (i >= this.length) {
+                return null;
+            }
+            const nextCode = this.charCodeAt(i);
+
+            if ((nextCode & lowSurrogateValue) != lowSurrogateValue) {
+                return null;
+            }
+            code = (code << 10) + nextCode - 0x35fdc00;
+        }
+
+        arr.push(code);
+    }
+
     return arr;
 };
