@@ -1,3 +1,3 @@
 require("./src/String.Encoding");
 
-console.log("😻!!!으악".toUTF32Array());
+console.log(String.fromUTF32Array("😻!!!으악".toUTF32Array()));

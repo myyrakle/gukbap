@@ -47,7 +47,20 @@ String.fromUTF16Array = function (array) {
 };
 
 String.fromUTF32Array = function (array) {
-    return "";
+    let out = [];
+
+    for (let i = 0; i < this.length; i++) {
+        array[i];
+
+        if (array[i] <= 65536) {
+            out.push(array[i]);
+        } else {
+            const temp = array[i] + 0x35fdc00;
+            const high = temp >> 16;
+        }
+    }
+
+    return out.join("");
 };
 
 String.prototype.toUTF8Array = function () {
@@ -120,3 +133,5 @@ String.prototype.toUTF32Array = function () {
 
     return arr;
 };
+
+module.exports = {};
