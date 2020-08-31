@@ -49,15 +49,23 @@ String.fromUTF16Array = function (array) {
 String.fromUTF32Array = function (array) {
     let out = [];
 
+    let h;
+    let l;
     for (let i = 0; i < this.length; i++) {
-        array[i];
+        const e = array[i];
 
-        if (array[i] <= 65536) {
-            out.push(array[i]);
-        } else {
-            const temp = array[i] + 0x35fdc00;
-            const high = temp >> 16;
+        if (e < 0x10000) {
+            h = 0;
+            l = e;
+            out.push(String.fromCharCode(e));
+            continue;
         }
+        let t = e - 0x10000;
+        h = ((t << 12) >> 22) + 0xd800;
+        l = ((t << 22) >> 22) + 0xdc00;
+
+        out.push(h);
+        out.push(l);
     }
 
     return out.join("");
