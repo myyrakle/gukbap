@@ -1,6 +1,6 @@
 # gukbap - JavaScript built-in extensions
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.2-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.4-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
 
 It is an extension library that fills in the shortcomings of built-in objects.  
 It's like GUKBAP.
@@ -22,7 +22,7 @@ console.log("foo".reversed()); // "oof"
 
 ## Obecct Extension
 
-- none
+- Object.prototype.clone() //deep clone
 
 ## Array Extension
 
