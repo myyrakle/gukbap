@@ -22,48 +22,50 @@ console.log("foo".reversed()); // "oof"
 
 ## Obecct Extension
 
-- Object.prototype.clone() //deep clone
+-   Object.fromJSONString(jsonStrng)
+-   Object.prorotype.toJSONString()
+-   Object.prototype.clone() //deep clone
 
 ## Array Extension
 
-- Array.range(begin, end)
-- Array.prototype.first()
-- Array.prototype.last()
-- Array.prototype.empty()
-- Array.prototype.clone()
-- Array.prototype.reversed()
-- Array.prototype.sorted([compare])
-- Array.prototype.shuffle()
-- Array.prototype.shuffled()
-- Array.prototype.min()
-- Array.prototype.max()
-- Array.prototype.sum()
-- Array.prototype.average()
-- Array.prototype.flat()
+-   Array.range(begin, end)
+-   Array.prototype.first()
+-   Array.prototype.last()
+-   Array.prototype.empty()
+-   Array.prototype.clone()
+-   Array.prototype.reversed()
+-   Array.prototype.sorted([compare])
+-   Array.prototype.shuffle()
+-   Array.prototype.shuffled()
+-   Array.prototype.min()
+-   Array.prototype.max()
+-   Array.prototype.sum()
+-   Array.prototype.average()
+-   Array.prototype.flat()
 
 ## String Extension
 
-- String.fromArray(array)
-- String.prototype.toArray()
-- String.prototype.reversed()
-- String.prototype.sorted([compare])
-- String.prototype.forEach(callback)
-- String.prototype.map(callback)
-- String.prototype.reduce(callback, acc)
+-   String.fromArray(array)
+-   String.prototype.toArray()
+-   String.prototype.reversed()
+-   String.prototype.sorted([compare])
+-   String.prototype.forEach(callback)
+-   String.prototype.map(callback)
+-   String.prototype.reduce(callback, acc)
 
 ## Encoding Extension
 
-- String.fromUTF8Array(array)
-- String.fromUTF16Array(array)
-- String.fromUTF32Array(array) //not impl
-- String.prototype.toUTF8Array()
-- String.prototype.toUTF16Array()
-- String.prototype.toUTF32Array()
+-   String.fromUTF8Array(array)
+-   String.fromUTF16Array(array)
+-   String.fromUTF32Array(array) //not impl
+-   String.prototype.toUTF8Array()
+-   String.prototype.toUTF16Array()
+-   String.prototype.toUTF32Array()
 
 ## Date Extension
 
-- none
+-   none
 
 ## Math Extension
 
-- none
+-   none
