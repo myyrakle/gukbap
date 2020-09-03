@@ -6,6 +6,5 @@
 
 require("./src/Object");
 const foo = { foo: "bar", boom: { text: "으악" } };
-const cl = foo.clone();
-foo.foo = "???";
-console.log(foo, cl);
+const cl = foo.toJSONString();
+console.log(typeof cl);
