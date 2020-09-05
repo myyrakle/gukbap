@@ -24,4 +24,10 @@ Date.prototype.toHMS = function (deliminator = ":") {
 Date.fromYMD = function (ymd) {};
 Date.fromHMS = function (hms) {};
 
-Date.prototype.addDate = function () {};
+Date.prototype.addSecond = function () {};
+Date.prototype.addMinute = function () {};
+Date.prototype.addHour = function () {};
+Date.prototype.addDay = function () {};
+Date.prototype.addWeek = function () {};
+Date.prototype.addMonth = function () {};
+Date.prototype.addYear = function () {};
