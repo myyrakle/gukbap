@@ -4,7 +4,5 @@
 
 // console.log(String.fromUTF32Array(foo));
 
-require("./src/Object");
-const foo = { foo: "bar", boom: { text: "으악" } };
-const cl = foo.toJSONString();
-console.log(typeof cl);
+require("./src/Date");
+console.log(new Date().toHMS());
