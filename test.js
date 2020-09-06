@@ -5,4 +5,7 @@
 // console.log(String.fromUTF32Array(foo));
 
 require("./src/Date");
-console.log(new Date().toHMS());
+const date = new Date();
+console.log(date.getMonth());
+date.addMonth(10);
+console.log(date.getMonth());

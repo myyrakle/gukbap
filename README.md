@@ -1,6 +1,6 @@
 # gukbap - JavaScript built-in extensions
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.9-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.10-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
 
 It is an extension library that fills in the shortcomings of built-in objects.  
 It's like GUKBAP.
@@ -20,7 +20,7 @@ console.log([1, 2, 3, 4, 5].sum()); // 15
 console.log("foo".reversed()); // "oof"
 ```
 
-## Obecct Extension
+## Object Extension
 
 -   Object.fromJSONString(jsonStrng)
 -   Object.prorotype.toJSONString()
@@ -74,6 +74,7 @@ console.log("foo".reversed()); // "oof"
 -   Date.prototype.toH24MS([deliminator]) //not impl
 -   Date.prototype.toH12MS([deliminator]) //not impl
 -   Date.prototype.toChar(format) //not impl
+-   Date.prototype.toMonth() //?
 -   Date.prototype.getDayOfWeek() //not impl
 -   Date.prototype.getWeekOfMonth() //not impl
 -   Date.prototype.getWeekOfYear() //not impl

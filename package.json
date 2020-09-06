@@ -1,6 +1,6 @@
 {
     "name": "gukbap",
-    "version": "0.2.9",
+    "version": "0.2.10",
     "description": "JavaScript built-in extensions",
     "main": "index.js",
     "scripts": {
