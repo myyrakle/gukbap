@@ -1,6 +1,6 @@
 # gukbap - JavaScript built-in extensions
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.11-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.12-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
 
 It is an extension library that fills in the shortcomings of built-in objects.  
 It's like GUKBAP.
@@ -29,7 +29,7 @@ console.log("foo".reversed()); // "oof"
 
 # Function Extension
 
--   none
+-   Function.isFunction(value)
 
 ## Array Extension
 
@@ -50,10 +50,12 @@ console.log("foo".reversed()); // "oof"
 
 ## Number Extension
 
+-   Number.isNumber(value)
 -   Number.isFloat(value)
 
 ## String Extension
 
+-   String.isString(value)
 -   String.fromArray(array)
 -   String.prototype.toArray()
 -   String.prototype.reversed()
@@ -73,6 +75,7 @@ console.log("foo".reversed()); // "oof"
 
 ## Date Extension
 
+-   Date.isDate(value)
 -   Date.fromUnixTimestamp(unixTimestamp)
 -   Date.prototype.toUnixTimestamp()
 -   //Date.prototype.toYMD([deliminator])

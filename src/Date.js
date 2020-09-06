@@ -1,3 +1,7 @@
+Date.isDate = function (value) {
+    return value instanceof Date;
+};
+
 Date.fromUnixTimestamp = function (unixTimestamp) {
     return new Date(unixTimestamp * 1000);
 };

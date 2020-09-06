@@ -1,3 +1,7 @@
+const { isString } = require("./../lib/typecheck");
+
+String.isString = isString;
+
 String.fromArray = function (array) {
     return array.join("");
 };
