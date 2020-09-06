@@ -1,6 +1,6 @@
 # gukbap - JavaScript built-in extensions
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.8-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.2.9-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
 
 It is an extension library that fills in the shortcomings of built-in objects.  
 It's like GUKBAP.
@@ -71,6 +71,19 @@ console.log("foo".reversed()); // "oof"
 -   Date.fromUnixTimestamp(unixTimestamp)
 -   Date.prototype.toUnixTimestamp()
 -   Date.prototype.toYMD([deliminator])
+-   Date.prototype.toH24MS([deliminator]) //not impl
+-   Date.prototype.toH12MS([deliminator]) //not impl
+-   Date.prototype.toChar(format) //not impl
+-   Date.prototype.getDayOfWeek() //not impl
+-   Date.prototype.getWeekOfMonth() //not impl
+-   Date.prototype.getWeekOfYear() //not impl
+-   Date.prototype.addSecond(second)
+-   Date.prototype.addMinute(minute)
+-   Date.prototype.addHour(hour)
+-   Date.prototype.addDate(date)
+-   Date.prototype.addWeek(week) //not impl
+-   Date.prototype.addMonth(month)
+-   Date.prototype.addYear(year)
 
 ## Math Extension
 

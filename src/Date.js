@@ -24,10 +24,40 @@ Date.prototype.toHMS = function (deliminator = ":") {
 Date.fromYMD = function (ymd) {};
 Date.fromHMS = function (hms) {};
 
-Date.prototype.addSecond = function () {};
-Date.prototype.addMinute = function () {};
-Date.prototype.addHour = function () {};
-Date.prototype.addDay = function () {};
-Date.prototype.addWeek = function () {};
-Date.prototype.addMonth = function () {};
-Date.prototype.addYear = function () {};
+Date.prototype.getDayOfWeek = function () {};
+Date.prototype.getWeekOfMonth = function (exact) {
+    var month = this.getMonth(),
+        year = this.getFullYear(),
+        firstWeekday = new Date(year, month, 1).getDay(),
+        lastDateOfMonth = new Date(year, month + 1, 0).getDate(),
+        offsetDate = this.getDate() + firstWeekday - 1,
+        index = 1, // start index at 0 or 1, your choice
+        weeksInMonth =
+            index + Math.ceil((lastDateOfMonth + firstWeekday - 7) / 7),
+        week = index + Math.floor(offsetDate / 7);
+    if (exact || week < 2 + index) return week;
+    return week === weeksInMonth ? index + 5 : week;
+};
+Date.prototype.getWeekOfYear = function () {};
+
+Date.prototype.addSecond = function (second) {
+    return this.setSeconds(this.getSeconds() + second);
+};
+Date.prototype.addMinute = function (minute) {
+    return this.setMinutes(this.getMinutes() + minute);
+};
+Date.prototype.addHour = function (hour) {
+    return this.setHours(this.getHours() + hour);
+};
+Date.prototype.addDate = function (date) {
+    return this.setDate(this.getDate() + date);
+};
+Date.prototype.addWeek = function (week) {
+    return this.setDate(null);
+};
+Date.prototype.addMonth = function (month) {
+    return this.setMonth(this.getMonth() + month);
+};
+Date.prototype.addYear = function (year) {
+    return this.setFullYear(this.getFullYear() + year);
+};
