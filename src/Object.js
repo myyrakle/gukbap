@@ -38,3 +38,7 @@ Object.prototype.toJSONString = function () {
 Object.fromJSONString = function (jsonString) {
     return JSON.parse(jsonString);
 };
+
+const { isObject } = require("./../lib/typecheck");
+
+Object.isObject = isObject;

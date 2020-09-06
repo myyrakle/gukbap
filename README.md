@@ -22,9 +22,14 @@ console.log("foo".reversed()); // "oof"
 
 ## Object Extension
 
+-   Object.isObject(value)
 -   Object.fromJSONString(jsonStrng)
 -   Object.prorotype.toJSONString()
 -   Object.prototype.deepClone()
+
+# Function Extension
+
+-   none
 
 ## Array Extension
 
@@ -70,9 +75,9 @@ console.log("foo".reversed()); // "oof"
 
 -   Date.fromUnixTimestamp(unixTimestamp)
 -   Date.prototype.toUnixTimestamp()
--   Date.prototype.toYMD([deliminator])
--   Date.prototype.toH24MS([deliminator]) //not impl
--   Date.prototype.toH12MS([deliminator]) //not impl
+-   //Date.prototype.toYMD([deliminator])
+-   //Date.prototype.toH24MS([deliminator]) //not impl
+-   //Date.prototype.toH12MS([deliminator]) //not impl
 -   Date.prototype.toChar(format) //not impl
 -   Date.prototype.toMonth() //?
 -   Date.prototype.getDayOfWeek() //not impl
