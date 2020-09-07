@@ -78,9 +78,6 @@ console.log("foo".reversed()); // "oof"
 -   Date.isDate(value)
 -   Date.fromUnixTimestamp(unixTimestamp)
 -   Date.prototype.toUnixTimestamp()
--   //Date.prototype.toYMD([deliminator])
--   //Date.prototype.toH24MS([deliminator]) //not impl
--   //Date.prototype.toH12MS([deliminator]) //not impl
 -   Date.prototype.toChar(format) //not impl
 -   Date.prototype.toMonth() //?
 -   Date.prototype.getDayOfWeek() //not impl
