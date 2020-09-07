@@ -51,21 +51,23 @@ String.fromUTF32Array = function (array) {
 
     let h;
     let l;
-    for (let i = 0; i < this.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         const e = array[i];
 
-        if (e < 0x10000) {
-            h = 0;
-            l = e;
-            out.push(String.fromCharCode(e));
-            continue;
-        }
-        let t = e - 0x10000;
-        h = ((t << 12) >> 22) + 0xd800;
-        l = ((t << 22) >> 22) + 0xdc00;
+        out.push(String.fromCodePoint(e));
+        // // in utf16 range
+        // if (e < 0x10000) {
+        //     h = 0;
+        //     l = e;
+        //     out.push(String.fromCharCode(e));
+        //     continue;
+        // } else {
+        //     let t = e - 0x10000;
+        //     h = ((t << 12) >> 22) + 0xd800;
+        //     l = ((t << 22) >> 22) + 0xdc00;
 
-        out.push(h);
-        out.push(l);
+        //     //           out.push();
+        // }
     }
 
     return out.join("");
