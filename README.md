@@ -79,7 +79,8 @@ console.log("foo".reversed()); // "oof"
 -   Date.fromUnixTimestamp(unixTimestamp)
 -   Date.prototype.toUnixTimestamp()
 -   Date.prototype.toChar(format) //not impl
--   Date.prototype.toMonth() //?
+-   Date.prototype.getRealMonth() //not impl
+-   Date.prototype.setRealMonth() //not impl
 -   Date.prototype.getDayOfWeek() //not impl
 -   Date.prototype.getWeekOfMonth() //not impl
 -   Date.prototype.getWeekOfYear() //not impl
@@ -89,6 +90,7 @@ console.log("foo".reversed()); // "oof"
 -   Date.prototype.addDate(date)
 -   Date.prototype.addWeek(week) //not impl
 -   Date.prototype.addMonth(month)
+-   Date.prototype.addRealMonth(month)
 -   Date.prototype.addYear(year)
 
 ## Math Extension
