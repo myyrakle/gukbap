@@ -1,4 +1,12 @@
 require("./index");
+
+let arr = [1, 2, 3, 4, 5];
+arr.shuffle();
+console.log(arr); //
+
+// const foo = { s: 33 };
+// console.log(foo.deepClone());
+
 // const foo = "😻!!!으악".toUTF32Array();
 
 // console.log("😻32", foo);
