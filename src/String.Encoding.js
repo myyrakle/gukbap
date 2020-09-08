@@ -1,4 +1,77 @@
+const UTF8_ONE_BYTE_MASK = 0b10000000;
+const UTF8_ONE_BYTE_COUNT = 0;
+
+const UTF8_TWO_BYTE_MASK = 0b11100000;
+const UTF8_TWO_BYTE_COUNT = 0b11000000;
+
+const UTF8_THREE_BYTE_MASK = 0b11110000;
+const UTF8_THREE_BYTE_COUNT = 0b11100000;
+
+const UTF8_FOUR_BYTE_MASK = 0b11111000;
+const UTF8_FOUR_BYTE_COUNT = 0b11110000;
+
+const UTF8_OTHER_MASK = 0b00111111;
+
+function _UTF8CodePointSize(text) {
+    if ((text & UTF8_ONE_BYTE_MASK) == UTF8_ONE_BYTE_COUNT) {
+        return 1;
+    }
+
+    if ((text & UTF8_TWO_BYTE_MASK) == UTF8_TWO_BYTE_COUNT) {
+        return 2;
+    }
+
+    if ((text & UTF8_THREE_BYTE_MASK) == UTF8_THREE_BYTE_COUNT) {
+        return 3;
+    }
+
+    // TODO: what should happen if a byte with prefix 0b10xxxxxx is passed?
+    return 4;
+}
+
 String.fromUTF8Array = function (array) {
+    let out = [];
+    for (let i = 0; i < array.length; ) {
+        const byte_count = _UTF8CodePointSize(array[i]);
+        let c = null;
+
+        switch (byte_count) {
+            case 1:
+                c = array[i] & ~UTF8_ONE_BYTE_MASK;
+                break;
+
+            case 2:
+                c =
+                    ((array[i] & ~UTF8_TWO_BYTE_MASK) << 6) |
+                    (array[i + 1] & UTF8_OTHER_MASK);
+                break;
+
+            case 3:
+                c =
+                    ((array[i] & ~UTF8_THREE_BYTE_MASK) << 12) |
+                    ((array[i + 1] & UTF8_OTHER_MASK) << 6) |
+                    (array[i + 2] & UTF8_OTHER_MASK);
+                break;
+
+            case 4:
+                c =
+                    ((array[i] & ~UTF8_FOUR_BYTE_MASK) << 18) |
+                    ((array[i + 1] & UTF8_OTHER_MASK) << 12) |
+                    ((array[i + 2] & UTF8_OTHER_MASK) << 6) |
+                    (array[i + 3] & UTF8_OTHER_MASK);
+                break;
+
+            // TODO: error handling?
+        }
+
+        i += byte_count;
+        console.log(c);
+        out.push(String.fromCodePoint(c));
+    }
+
+    return out.join("");
+};
+/*function (array) {
     let out = "";
     let len = array.length;
     let i = 0;
@@ -40,7 +113,7 @@ String.fromUTF8Array = function (array) {
         }
     }
     return out;
-};
+};*/
 
 String.fromUTF16Array = function (array) {
     return String.fromCharCode(...array);
@@ -53,21 +126,7 @@ String.fromUTF32Array = function (array) {
     let l;
     for (let i = 0; i < array.length; i++) {
         const e = array[i];
-
         out.push(String.fromCodePoint(e));
-        // // in utf16 range
-        // if (e < 0x10000) {
-        //     h = 0;
-        //     l = e;
-        //     out.push(String.fromCharCode(e));
-        //     continue;
-        // } else {
-        //     let t = e - 0x10000;
-        //     h = ((t << 12) >> 22) + 0xd800;
-        //     l = ((t << 22) >> 22) + 0xdc00;
-
-        //     //           out.push();
-        // }
     }
 
     return out.join("");
