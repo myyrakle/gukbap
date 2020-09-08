@@ -112,9 +112,11 @@ console.log("foo".reversed()); // "oof"
 -   [Date.prototype.addRealMonth(month)](./doc/NotWritten.md)
 -   [Date.prototype.addYear(year)](./doc/NotWritten.md)
 
+##
+
 ## Boolean Extension
 
--   none
+-   [Boolean.isBoolean(value)](./doc/Boolean/isBoolean.md)
 
 ## Error Extension
 
