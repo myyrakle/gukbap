@@ -1,6 +1,6 @@
 # gukbap - JavaScript built-in extensions
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.3.4-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.3.5-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
 
 It is an extension library that fills in the shortcomings of built-in objects.  
 It's like GUKBAP.
@@ -30,7 +30,7 @@ console.log("foo".reversed()); // "oof"
 
 -   [Object.isObject(value)](./doc/Object/isObject.md)
 -   [Object.fromJSONString(jsonStrng)](./doc/Object/fromJSONString.md)
--   [Object.prorotype.toJSONString()](./doc/Object/toJSONString.md)
+-   [Object.prototype.toJSONString()](./doc/Object/toJSONString.md)
 -   [Object.prototype.deepClone()](./doc/Object/isObject.md) //not impl
 
 ##
@@ -41,29 +41,16 @@ console.log("foo".reversed()); // "oof"
 
 ##
 
-## Array Extension
-
--   [Array.range(begin, end)](./doc/Array/range.md)
--   [Array.prototype.first()](./doc/Array/first.md)
--   [Array.prototype.last()](./doc/Array/last.md)
--   [Array.prototype.empty()](./doc/Array/empty.md)
--   [Array.prototype.clone()](./doc/Array/clone.md)
--   [Array.prototype.reversed()](./doc/Array/reversed.md)
--   [Array.prototype.sorted([compare])](./doc/Array/sorted.md)
--   [Array.prototype.shuffle()](./doc/Array/shuffle.md)
--   [Array.prototype.shuffled()](./doc/Array/shuffled.md)
--   [Array.prototype.min()](./doc/Array/min.md)
--   [Array.prototype.max()](./doc/Array/max.md)
--   [Array.prototype.sum()](./doc/Array/sum.md)
--   [Array.prototype.average()](./doc/Array/average.md)
--   [Array.prototype.flat()](./doc/Array/flat.md)
-
-##
-
 ## Number Extension
 
 -   [Number.isNumber(value)](./doc/Number/isNumber.md)
 -   [Number.isFloat(value)](./doc/Number/isFloat.md)
+
+##
+
+## Boolean Extension
+
+-   [Boolean.isBoolean(value)](./doc/Boolean/isBoolean.md)
 
 ##
 
@@ -91,6 +78,25 @@ console.log("foo".reversed()); // "oof"
 
 ##
 
+## Array Extension
+
+-   [Array.range(begin, end)](./doc/Array/range.md)
+-   [Array.prototype.first()](./doc/Array/first.md)
+-   [Array.prototype.last()](./doc/Array/last.md)
+-   [Array.prototype.empty()](./doc/Array/empty.md)
+-   [Array.prototype.clone()](./doc/Array/clone.md)
+-   [Array.prototype.reversed()](./doc/Array/reversed.md)
+-   [Array.prototype.sorted([compare])](./doc/Array/sorted.md)
+-   [Array.prototype.shuffle()](./doc/Array/shuffle.md)
+-   [Array.prototype.shuffled()](./doc/Array/shuffled.md)
+-   [Array.prototype.min()](./doc/Array/min.md)
+-   [Array.prototype.max()](./doc/Array/max.md)
+-   [Array.prototype.sum()](./doc/Array/sum.md)
+-   [Array.prototype.average()](./doc/Array/average.md)
+-   [Array.prototype.flat()](./doc/Array/flat.md)
+
+##
+
 ## Date Extension
 
 -   [Date.isDate(value)](./doc/Date/isDate.md)
@@ -111,12 +117,6 @@ console.log("foo".reversed()); // "oof"
 -   [Date.prototype.addMonth(month)](./doc/NotWritten.md)
 -   [Date.prototype.addRealMonth(month)](./doc/NotWritten.md)
 -   [Date.prototype.addYear(year)](./doc/NotWritten.md)
-
-##
-
-## Boolean Extension
-
--   [Boolean.isBoolean(value)](./doc/Boolean/isBoolean.md)
 
 ## Error Extension
 
