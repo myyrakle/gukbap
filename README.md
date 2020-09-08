@@ -37,7 +37,7 @@ console.log("foo".reversed()); // "oof"
 -   [Array.prototype.first()](./doc/Array/first.md)
 -   [Array.prototype.last()](./doc/Array/last.md)
 -   [Array.prototype.empty()](./doc/Array/empty.md)
--   [Array.prototype.clone()]
+-   [Array.prototype.clone()](./doc/Array/clone.md)
 -   [Array.prototype.reversed()](./doc/Array/reversed.md)
 -   [Array.prototype.sorted([compare])](./doc/Array/sorted.md)
 -   [Array.prototype.shuffle()](./doc/Array/shuffle.md)
@@ -55,29 +55,29 @@ console.log("foo".reversed()); // "oof"
 
 ## String Extension
 
--   [String.isString(value)]()
--   [String.fromArray(array)]()
--   [String.prototype.toArray()]()
--   [String.prototype.reversed()]()
--   [String.prototype.sorted([compare])]()
--   [String.prototype.forEach(callback)]()
--   [String.prototype.map(callback)]()
--   [String.prototype.reduce(callback, acc)]()
+-   [String.isString(value)](./doc/String/isString.md)
+-   [String.fromArray(array)](./doc/String/fromArray.md)
+-   [String.prototype.toArray()](./doc/String/toArray.md)
+-   [String.prototype.reversed()](./doc/String/reversed.md)
+-   [String.prototype.sorted([compare])](./doc/String/sorted.md)
+-   [String.prototype.forEach(callback)](./doc/String/forEach.md)
+-   [String.prototype.map(callback)](./doc/String/map.md)
+-   [String.prototype.reduce(callback, acc)](./doc/String/reduce.md)
 
 ## Encoding Extension
 
--   [String.fromUTF8Array(array)]()
--   [String.fromUTF16Array(array)]()
--   [String.fromUTF32Array(array)]()
--   [String.prototype.toUTF8Array()]()
--   [String.prototype.toUTF16Array()]()
--   [String.prototype.toUTF32Array()]()
+-   [String.fromUTF8Array(array)](./doc/Encoding/fromUTF8Array.md) //utf32 range charager problem
+-   [String.fromUTF16Array(array)](./doc/Encoding/fromUTF16Array.md)
+-   [String.fromUTF32Array(array)](./doc/Encoding/fromUTF32Array.md)
+-   [String.prototype.toUTF8Array()](./doc/Encoding/toUTF8Array.md)
+-   [String.prototype.toUTF16Array()](./doc/Encoding/toUTF16Array.md)
+-   [String.prototype.toUTF32Array()](./doc/Encoding/toUTF32Array.md)
 
 ## Date Extension
 
--   [Date.isDate(value)]()
--   [Date.fromUnixTimestamp(unixTimestamp)]()
--   [Date.prototype.toUnixTimestamp()]()
+-   [Date.isDate(value)](./doc/Date/isDate.md)
+-   [Date.fromUnixTimestamp(unixTimestamp)](./doc/Date/fromUnixTimestamp.md)
+-   [Date.prototype.toUnixTimestamp()](./doc/Date/toUnixTimestamp.md)
 -   Date.prototype.toChar(format) //not impl
 -   Date.prototype.getRealMonth() //not impl
 -   Date.prototype.setRealMonth() //not impl

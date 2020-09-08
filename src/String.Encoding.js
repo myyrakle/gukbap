@@ -19,19 +19,19 @@ String.fromUTF8Array = function (array) {
             case 6:
             case 7:
                 // 0xxxxxxx
-                out += String.fromCharCode(c);
+                out += String.fromCodePoint(c);
                 break;
             case 12:
             case 13:
                 // 110x xxxx   10xx xxxx
                 char2 = array[i++];
-                out += String.fromCharCode(((c & 0x1f) << 6) | (char2 & 0x3f));
+                out += String.fromCodePoint(((c & 0x1f) << 6) | (char2 & 0x3f));
                 break;
             case 14:
                 // 1110 xxxx  10xx xxxx  10xx xxxx
                 char2 = array[i++];
                 char3 = array[i++];
-                out += String.fromCharCode(
+                out += String.fromCodePoint(
                     ((c & 0x0f) << 12) |
                         ((char2 & 0x3f) << 6) |
                         ((char3 & 0x3f) << 0)
