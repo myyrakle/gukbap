@@ -84,6 +84,7 @@ console.log("foo".reversed()); // "oof"
 -   Date.prototype.getDayOfWeek() //not impl
 -   Date.prototype.getWeekOfMonth() //not impl
 -   Date.prototype.getWeekOfYear() //not impl
+-   Date.prototype.addMilliSecond(millisecond)
 -   Date.prototype.addSecond(second)
 -   Date.prototype.addMinute(minute)
 -   Date.prototype.addHour(hour)
