@@ -7,7 +7,7 @@ let func = function(){};
 let obj = {};
 let num = 102;
 
-console.log(Function.isFunction(func)); //true;
-console.log(Function.isFunction(obj)); //true;
-console.log(Function.isFunction(num)); //false;
+console.log(Object.isObject(func)); //true;
+console.log(Object.isObject(obj)); //true;
+console.log(Object.isObject(num)); //false;
 ```

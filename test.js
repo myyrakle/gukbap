@@ -1,8 +1,8 @@
-require("./src/String.Encoding");
-const foo = "😻!!!으악".toUTF32Array();
+require("./index");
+// const foo = "😻!!!으악".toUTF32Array();
 
-console.log("😻32", foo);
-console.log(String.fromUTF32Array(foo));
+// console.log("😻32", foo);
+// console.log(String.fromUTF32Array(foo));
 
 // require("./src/Date");
 // const date = new Date();
