@@ -85,14 +85,14 @@ console.log("foo".reversed()); // "oof"
 -   Date.prototype.getWeekOfMonth() //not impl
 -   Date.prototype.getWeekOfYear() //not impl
 -   Date.prototype.addMilliSecond(millisecond) //not impl
--   [Date.prototype.addSecond(second)]()
--   [Date.prototype.addMinute(minute)]()
--   [Date.prototype.addHour(hour)]()
--   [Date.prototype.addDate(date)]()
+-   [Date.prototype.addSecond(second)](./doc/NotWritten.md)
+-   [Date.prototype.addMinute(minute)](./doc/NotWritten.md)
+-   [Date.prototype.addHour(hour)](./doc/NotWritten.md)
+-   [Date.prototype.addDate(date)](./doc/NotWritten.md)
 -   Date.prototype.addWeek(week) //not impl
--   [Date.prototype.addMonth(month)]()
--   [Date.prototype.addRealMonth(month)]()
--   [Date.prototype.addYear(year)]()
+-   [Date.prototype.addMonth(month)](./doc/NotWritten.md)
+-   [Date.prototype.addRealMonth(month)](./doc/NotWritten.md)
+-   [Date.prototype.addYear(year)](./doc/NotWritten.md)
 
 ## Math Extension
 
