@@ -5,11 +5,15 @@
 It is an extension library that fills in the shortcomings of built-in objects.  
 It's like GUKBAP.
 
+##
+
 ## install
 
 ```
 npm i --save gukbap
 ```
+
+##
 
 ## use
 
@@ -20,6 +24,8 @@ console.log([1, 2, 3, 4, 5].sum()); // 15
 console.log("foo".reversed()); // "oof"
 ```
 
+##
+
 ## Object Extension
 
 -   [Object.isObject(value)](./doc/Object/isObject.md)
@@ -27,9 +33,13 @@ console.log("foo".reversed()); // "oof"
 -   [Object.prorotype.toJSONString()](./doc/Object/toJSONString.md)
 -   [Object.prototype.deepClone()](./doc/Object/isObject.md) //not impl
 
+##
+
 ## Function Extension
 
 -   [Function.isFunction(value)](./doc/Function/isFunction.md)
+
+##
 
 ## Array Extension
 
@@ -48,10 +58,14 @@ console.log("foo".reversed()); // "oof"
 -   [Array.prototype.average()](./doc/Array/average.md)
 -   [Array.prototype.flat()](./doc/Array/flat.md)
 
+##
+
 ## Number Extension
 
 -   [Number.isNumber(value)](./doc/Number/isNumber.md)
 -   [Number.isFloat(value)](./doc/Number/isFloat.md)
+
+##
 
 ## String Extension
 
@@ -64,6 +78,8 @@ console.log("foo".reversed()); // "oof"
 -   [String.prototype.map(callback)](./doc/String/map.md)
 -   [String.prototype.reduce(callback, acc)](./doc/String/reduce.md)
 
+##
+
 ## Encoding Extension
 
 -   [String.fromUTF8Array(array)](./doc/Encoding/fromUTF8Array.md) //utf32 range charager problem
@@ -72,6 +88,8 @@ console.log("foo".reversed()); // "oof"
 -   [String.prototype.toUTF8Array()](./doc/Encoding/toUTF8Array.md)
 -   [String.prototype.toUTF16Array()](./doc/Encoding/toUTF16Array.md)
 -   [String.prototype.toUTF32Array()](./doc/Encoding/toUTF32Array.md)
+
+##
 
 ## Date Extension
 
@@ -93,6 +111,14 @@ console.log("foo".reversed()); // "oof"
 -   [Date.prototype.addMonth(month)](./doc/NotWritten.md)
 -   [Date.prototype.addRealMonth(month)](./doc/NotWritten.md)
 -   [Date.prototype.addYear(year)](./doc/NotWritten.md)
+
+## Boolean Extension
+
+-   none
+
+## Error Extension
+
+-   none
 
 ## Math Extension
 
