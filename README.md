@@ -31,7 +31,8 @@ console.log("foo".reversed()); // "oof"
 -   [Object.isObject(value)](./doc/Object/isObject.md)
 -   [Object.fromJSONString(jsonStrng)](./doc/Object/fromJSONString.md)
 -   [Object.prototype.toJSONString()](./doc/Object/toJSONString.md)
--   [Object.prototype.deepClone()](./doc/Object/isObject.md) //not impl
+-   [Object.prototype.clone()](./doc/Object/clone.md)
+-   [Object.prototype.deepClone()](./doc/Object/deepClone.md) //not impl
 
 ##
 

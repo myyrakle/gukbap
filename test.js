@@ -1,42 +1,15 @@
 require("./index");
 
-let arr = [
-    97,
-    98,
-    99,
-    227,
-    132,
-    177,
-    227,
-    132,
-    180,
-    227,
-    132,
-    183,
-    240,
-    159,
-    152,
-    187,
-];
-let str = String.fromUTF8Array(arr);
-console.log(str); // "abcㄱㄴㄷ"
+const foo = { s: 33 };
+const cl = foo.clone();
+cl.s++;
+console.log(foo); // { s: 33 }
+console.log(cl); // { s: 34 }
 
-/*
- [
-   97,  98,  99, 227, 132,
-  177, 227, 132, 180, 227,
-  132, 183, 240, 159, 152,
-  187
- ]
-*/
-
-// const foo = { s: 33 };
-// console.log(foo.deepClone());
-
-// const foo = "😻!!!으악".toUTF32Array();
-
-// console.log("😻32", foo);
-// console.log(String.fromUTF32Array(foo));
+const arr = [1, 2, 3, 4];
+const cl = Object.assign({}, arr);
+cl[0]++;
+console.log(arr, cl);
 
 // require("./src/Date");
 // const date = new Date();
