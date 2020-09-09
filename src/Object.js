@@ -13,7 +13,6 @@ function _deepClone(obj) {
 }
 
 Object.prototype.clone = function () {
-    console.log("ibject");
     return Object.assign({}, this);
 };
 
