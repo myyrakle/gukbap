@@ -1,6 +1,6 @@
 # gukbap - JavaScript built-in extensions
 
-![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.3.8-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Javascript-red) ![](https://img.shields.io/badge/version-0.3.9-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/gukbap/blob/master/LICENSE)
 
 It is an extension library that fills in the shortcomings of built-in objects.  
 It's like GUKBAP.
@@ -122,7 +122,3 @@ console.log("foo".reversed()); // "oof"
 ## Error Extension
 
 -   [Error.isError(value)](./doc/Error/isError.md)
-
-## Math Extension
-
--   none
