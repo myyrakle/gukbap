@@ -6,3 +6,4 @@ require("./src/Object");
 require("./src/Function");
 require("./src/Number");
 require("./src/Boolean");
+require("./src/Error");

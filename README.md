@@ -121,7 +121,7 @@ console.log("foo".reversed()); // "oof"
 
 ## Error Extension
 
--   none
+-   [Error.isError(value)](./doc/Error/isError.md)
 
 ## Math Extension
 
