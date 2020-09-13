@@ -1,16 +1,14 @@
 require("./index");
 
-let func = function () {};
-let obj = {};
-let num = 102;
-let err = new Error("boom!");
-let typeerr = new TypeError("!!!");
+let t = "true";
+let t2 = true;
+let f = "false";
+let asdf = "sfdsa";
 
-console.log(Error.isError(func)); //false;
-console.log(Error.isError(obj)); //false;
-console.log(Error.isError(num)); //false;
-console.log(Error.isError(err)); //true;
-console.log(Error.isError(typeerr)); //true;
+console.log(Boolean.parseBoolean(t)); //true
+console.log(Boolean.parseBoolean(t2)); // true
+console.log(Boolean.parseBoolean(f)); //false
+console.log(Boolean.parseBoolean(asdf)); //null
 
 // const arr = [1, 2, 3, 4];
 // const cl = Object.assign({}, arr);
