@@ -42,6 +42,8 @@ Date.prototype.getWeekOfMonth = function (exact) {
     if (exact || week < 2 + index) return week;
     return week === weeksInMonth ? index + 5 : week;
 };
+//수정 필요. 6 등이 나오기도 함
+
 Date.prototype.getWeekOfYear = function () {};
 
 Date.prototype.addSecond = function (second) {

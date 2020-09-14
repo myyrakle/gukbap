@@ -1,14 +1,8 @@
 require("./index");
 
-let t = "true";
-let t2 = true;
-let f = "false";
-let asdf = "sfdsa";
-
-console.log(Boolean.parseBoolean(t)); //true
-console.log(Boolean.parseBoolean(t2)); // true
-console.log(Boolean.parseBoolean(f)); //false
-console.log(Boolean.parseBoolean(asdf)); //null
+let date = new Date();
+date.addDate(21);
+console.log(date.getWeekOfMonth());
 
 // const arr = [1, 2, 3, 4];
 // const cl = Object.assign({}, arr);
