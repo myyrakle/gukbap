@@ -1,8 +1,10 @@
 require("./index");
 
 let date = new Date();
-date.addDate(21);
+date.addDate(-1);
 console.log(date.getWeekOfMonth());
+
+console.log(date.getDay());
 
 // const arr = [1, 2, 3, 4];
 // const cl = Object.assign({}, arr);

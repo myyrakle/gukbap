@@ -108,8 +108,6 @@ console.log("foo".reversed()); // "oof"
 -   Date.prototype.getRealMonth() //not impl
 -   Date.prototype.setRealMonth() //not impl
 -   Date.prototype.getDayOfWeek() //not impl
--   Date.prototype.getWeekOfMonth() //not impl
--   Date.prototype.getWeekOfYear() //not impl
 -   Date.prototype.addMilliSecond(millisecond) //not impl
 -   [Date.prototype.addSecond(second)](./doc/NotWritten.md)
 -   [Date.prototype.addMinute(minute)](./doc/NotWritten.md)
