@@ -1,15 +1,10 @@
 require("./index");
 
 let date = new Date();
-console.log(date); //2020-09-16T04:24:29.415Z
+console.log(date); //2020-09-16T04:36:14.191Z
 
-date.addMilliSeconds(102);
-console.log(date); //2020-09-16T04:24:29.517Z
-
-// let date = new Date();
-// console.log(date.getRealMonth());
-// date.setRealMonth(5);
-// console.log(date);
+date.setRealMonth(5);
+console.log(date); //2020-05-16T04:36:14.191Z
 
 // const arr = [1, 2, 3, 4];
 // const cl = Object.assign({}, arr);

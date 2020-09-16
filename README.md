@@ -105,9 +105,8 @@ console.log("foo".reversed()); // "oof"
 -   [Date.fromUnixTimestamp(unixTimestamp)](./doc/Date/fromUnixTimestamp.md)
 -   [Date.prototype.toUnixTimestamp()](./doc/Date/toUnixTimestamp.md)
 -   Date.prototype.toChar(format) //not impl
--   Date.prototype.getRealMonth()
--   Date.prototype.setRealMonth()
--   Date.prototype.getDayOfWeek() //not impl
+-   [Date.prototype.getRealMonth()](./doc/Date/getRealMonth.md)
+-   [Date.prototype.setRealMonth()](./doc/Date/setRealMonth.md)
 -   [Date.prototype.addMilliSeconds(millisecond)](./doc/Date/addMilliSeconds.md)
 -   [Date.prototype.addSeconds(second)](./doc/Date/addSeconds.md)
 -   [Date.prototype.addMinutes(minute)](./doc/Date/addMinutes.md)
