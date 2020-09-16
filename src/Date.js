@@ -38,20 +38,24 @@ Date.prototype.setRealMonth = function (realMonth) {
 
 Date.prototype.getDayOfWeek = function () {};
 
-Date.prototype.addSecond = function (second) {
+Date.prototype.addMilliSeconds = function (millisecond) {
+    return this.setMilliseconds(this.getMilliseconds() + millisecond);
+};
+
+Date.prototype.addSeconds = function (second) {
     return this.setSeconds(this.getSeconds() + second);
 };
-Date.prototype.addMinute = function (minute) {
+Date.prototype.addMinutes = function (minute) {
     return this.setMinutes(this.getMinutes() + minute);
 };
-Date.prototype.addHour = function (hour) {
+Date.prototype.addHours = function (hour) {
     return this.setHours(this.getHours() + hour);
 };
 Date.prototype.addDate = function (date) {
     return this.setDate(this.getDate() + date);
 };
 Date.prototype.addWeek = function (week) {
-    return this.setDate(null);
+    return this.setDate(this.getDate() + week * 7);
 };
 Date.prototype.addMonth = function (month) {
     return this.setMonth(this.getMonth() + month);

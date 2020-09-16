@@ -105,18 +105,17 @@ console.log("foo".reversed()); // "oof"
 -   [Date.fromUnixTimestamp(unixTimestamp)](./doc/Date/fromUnixTimestamp.md)
 -   [Date.prototype.toUnixTimestamp()](./doc/Date/toUnixTimestamp.md)
 -   Date.prototype.toChar(format) //not impl
--   Date.prototype.getRealMonth() //not impl
--   Date.prototype.setRealMonth() //not impl
+-   Date.prototype.getRealMonth()
+-   Date.prototype.setRealMonth()
 -   Date.prototype.getDayOfWeek() //not impl
--   Date.prototype.addMilliSecond(millisecond) //not impl
--   [Date.prototype.addSecond(second)](./doc/NotWritten.md)
--   [Date.prototype.addMinute(minute)](./doc/NotWritten.md)
--   [Date.prototype.addHour(hour)](./doc/NotWritten.md)
--   [Date.prototype.addDate(date)](./doc/NotWritten.md)
--   Date.prototype.addWeek(week) //not impl
--   [Date.prototype.addMonth(month)](./doc/NotWritten.md)
--   [Date.prototype.addRealMonth(month)](./doc/NotWritten.md)
--   [Date.prototype.addYear(year)](./doc/NotWritten.md)
+-   [Date.prototype.addMilliSeconds(millisecond)](./doc/Date/addMilliSeconds.md)
+-   [Date.prototype.addSeconds(second)](./doc/Date/addSeconds.md)
+-   [Date.prototype.addMinutes(minute)](./doc/Date/addMinutes.md)
+-   [Date.prototype.addHours(hour)](./doc/Date/addHours.md)
+-   [Date.prototype.addDate(date)](./doc/Date/addDate.md)
+-   [Date.prototype.addWeek(week)](./doc/Date/addWeek.md)
+-   [Date.prototype.addMonth(month)](./doc/Date/addMonth.md)
+-   [Date.prototype.addYear(year)](./doc/Date/addYear.md)
 
 ## Error Extension
 
