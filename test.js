@@ -1,10 +1,9 @@
 require("./index");
 
 let date = new Date();
-date.addDate(-1);
-console.log(date.getWeekOfMonth());
-
-console.log(date.getDay());
+console.log(date.getRealMonth());
+date.setRealMonth(5);
+console.log(date);
 
 // const arr = [1, 2, 3, 4];
 // const cl = Object.assign({}, arr);
