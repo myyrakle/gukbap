@@ -38,3 +38,50 @@ String.prototype.reduce = function (callback, acc) {
     }
     return acc;
 };
+
+var leffPadCache = [
+    "",
+    " ",
+    "  ",
+    "   ",
+    "    ",
+    "     ",
+    "      ",
+    "       ",
+    "        ",
+    "         ",
+];
+
+String.prototype.leftPad = function (len, character) {
+    // convert `str` to a `string`
+    this = this + "";
+    // `len` is the `pad`'s length now
+    len = len - this.length;
+    // doesn't need to pad
+    if (len <= 0) return this;
+    // `ch` defaults to `' '`
+    if (!character && character !== 0) character = " ";
+    // convert `ch` to a `string` cuz it could be a number
+    character = character + "";
+    // cache common use cases
+    if (character === " " && len < 10) return leffPadCache[len] + this;
+    // `pad` starts with an empty string
+    var pad = "";
+    // loop
+    while (true) {
+        // add `ch` to `pad` if `len` is odd
+        if (len & 1) pad += character;
+        // divide `len` by 2, ditch the remainder
+        len >>= 1;
+        // "double" the `ch` so this operation count grows logarithmically on `len`
+        // each time `ch` is "doubled", the `len` would need to be "doubled" too
+        // similar to finding a value in binary search tree, hence O(log(n))
+        if (len) character += character;
+        // `len` is 0, exit the loop
+        else break;
+    }
+    // pad `str`!
+    return pad + this;
+};
+
+String.prototype.rightPad = function (len, character) {};
