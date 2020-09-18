@@ -30,10 +30,10 @@ function _UTF8CodePointSize(text) {
 }
 
 String.fromUTF8Array = function (array) {
-    let out = [];
-    for (let i = 0; i < array.length; ) {
+    var out = [];
+    for (var i = 0; i < array.length; ) {
         var byte_count = _UTF8CodePointSize(array[i]);
-        let c = null;
+        var c = null;
 
         switch (byte_count) {
             case 1:
@@ -72,13 +72,13 @@ String.fromUTF8Array = function (array) {
     return out.join("");
 };
 /*function (array) {
-    let out = "";
-    let len = array.length;
-    let i = 0;
-    let c;
+    var out = "";
+    var len = array.length;
+    var i = 0;
+    var c;
 
-    let char2;
-    let char3;
+    var char2;
+    var char3;
 
     while (i < len) {
         c = array[i++];
@@ -120,11 +120,11 @@ String.fromUTF16Array = function (array) {
 };
 
 String.fromUTF32Array = function (array) {
-    let out = [];
+    var out = [];
 
-    let h;
-    let l;
-    for (let i = 0; i < array.length; i++) {
+    var h;
+    var l;
+    for (var i = 0; i < array.length; i++) {
         var e = array[i];
         out.push(String.fromCodePoint(e));
     }
@@ -134,8 +134,8 @@ String.fromUTF32Array = function (array) {
 
 String.prototype.toUTF8Array = function () {
     var utf8 = [];
-    for (let i = 0; i < this.length; i++) {
-        let charcode = this.charCodeAt(i);
+    for (var i = 0; i < this.length; i++) {
+        var charcode = this.charCodeAt(i);
         if (charcode < 0x80) utf8.push(charcode);
         else if (charcode < 0x800) {
             utf8.push(0xc0 | (charcode >> 6), 0x80 | (charcode & 0x3f));
@@ -167,8 +167,8 @@ String.prototype.toUTF8Array = function () {
 };
 
 String.prototype.toUTF16Array = function () {
-    let arr = [];
-    for (let i = 0; i < this.length; i++) {
+    var arr = [];
+    for (var i = 0; i < this.length; i++) {
         arr[i] = this.charCodeAt(i);
     }
     return arr;
@@ -178,10 +178,10 @@ String.prototype.toUTF32Array = function () {
     var highSurrogateValue = parseInt("1101100000000000", 2);
     var lowSurrogateValue = parseInt("1101110000000000", 2);
 
-    let arr = [];
+    var arr = [];
 
-    for (let i = 0; i < this.length; i++) {
-        let code = this.charCodeAt(i);
+    for (var i = 0; i < this.length; i++) {
+        var code = this.charCodeAt(i);
 
         if ((code & highSurrogateValue) == highSurrogateValue) {
             i++;
