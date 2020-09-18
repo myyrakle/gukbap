@@ -1,16 +1,16 @@
-const UTF8_ONE_BYTE_MASK = 0b10000000;
-const UTF8_ONE_BYTE_COUNT = 0;
+var UTF8_ONE_BYTE_MASK = 0b10000000;
+var UTF8_ONE_BYTE_COUNT = 0;
 
-const UTF8_TWO_BYTE_MASK = 0b11100000;
-const UTF8_TWO_BYTE_COUNT = 0b11000000;
+var UTF8_TWO_BYTE_MASK = 0b11100000;
+var UTF8_TWO_BYTE_COUNT = 0b11000000;
 
-const UTF8_THREE_BYTE_MASK = 0b11110000;
-const UTF8_THREE_BYTE_COUNT = 0b11100000;
+var UTF8_THREE_BYTE_MASK = 0b11110000;
+var UTF8_THREE_BYTE_COUNT = 0b11100000;
 
-const UTF8_FOUR_BYTE_MASK = 0b11111000;
-const UTF8_FOUR_BYTE_COUNT = 0b11110000;
+var UTF8_FOUR_BYTE_MASK = 0b11111000;
+var UTF8_FOUR_BYTE_COUNT = 0b11110000;
 
-const UTF8_OTHER_MASK = 0b00111111;
+var UTF8_OTHER_MASK = 0b00111111;
 
 function _UTF8CodePointSize(text) {
     if ((text & UTF8_ONE_BYTE_MASK) == UTF8_ONE_BYTE_COUNT) {
@@ -32,7 +32,7 @@ function _UTF8CodePointSize(text) {
 String.fromUTF8Array = function (array) {
     let out = [];
     for (let i = 0; i < array.length; ) {
-        const byte_count = _UTF8CodePointSize(array[i]);
+        var byte_count = _UTF8CodePointSize(array[i]);
         let c = null;
 
         switch (byte_count) {
@@ -125,7 +125,7 @@ String.fromUTF32Array = function (array) {
     let h;
     let l;
     for (let i = 0; i < array.length; i++) {
-        const e = array[i];
+        var e = array[i];
         out.push(String.fromCodePoint(e));
     }
 
@@ -133,7 +133,7 @@ String.fromUTF32Array = function (array) {
 };
 
 String.prototype.toUTF8Array = function () {
-    const utf8 = [];
+    var utf8 = [];
     for (let i = 0; i < this.length; i++) {
         let charcode = this.charCodeAt(i);
         if (charcode < 0x80) utf8.push(charcode);
@@ -175,8 +175,8 @@ String.prototype.toUTF16Array = function () {
 };
 
 String.prototype.toUTF32Array = function () {
-    const highSurrogateValue = parseInt("1101100000000000", 2);
-    const lowSurrogateValue = parseInt("1101110000000000", 2);
+    var highSurrogateValue = parseInt("1101100000000000", 2);
+    var lowSurrogateValue = parseInt("1101110000000000", 2);
 
     let arr = [];
 
@@ -189,7 +189,7 @@ String.prototype.toUTF32Array = function () {
             if (i >= this.length) {
                 return null;
             }
-            const nextCode = this.charCodeAt(i);
+            var nextCode = this.charCodeAt(i);
 
             if ((nextCode & lowSurrogateValue) != lowSurrogateValue) {
                 return null;

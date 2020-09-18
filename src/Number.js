@@ -1,4 +1,4 @@
-const { isFloat, isNumber } = require("../lib/typecheck");
+var { isFloat, isNumber } = require("../lib/typecheck");
 
 Number.isFloat = isFloat;
 Number.isNumber = isNumber;

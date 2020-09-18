@@ -1,6 +1,6 @@
 /* static method */
 Array.range = function (begin, end) {
-    const arr = [];
+    var arr = [];
     while (begin < end) {
         arr.push(begin);
         begin++;
@@ -40,9 +40,9 @@ Array.prototype.reversed = function () {
 
 // mutable
 Array.prototype.shuffle = function () {
-    for (let i = this.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let x = this[i];
+    for (var i = this.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var x = this[i];
         this[i] = this[j];
         this[j] = x;
     }
@@ -59,9 +59,9 @@ Array.prototype.min = function () {
         return NaN;
     }
 
-    let minValue = this.first();
+    var minValue = this.first();
 
-    for (let i = 1; i < this.length; i++) {
+    for (var i = 1; i < this.length; i++) {
         if (minValue > this[i]) {
             minValue = this[i];
         }
@@ -75,9 +75,9 @@ Array.prototype.max = function () {
         return NaN;
     }
 
-    let maxValue = this.first();
+    var maxValue = this.first();
 
-    for (let i = 1; i < this.length; i++) {
+    for (var i = 1; i < this.length; i++) {
         if (maxValue < this[i]) {
             maxValue = this[i];
         }

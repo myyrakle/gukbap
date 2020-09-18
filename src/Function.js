@@ -1,4 +1,4 @@
-const { isFunction } = require("./../lib/typecheck");
+var { isFunction } = require("./../lib/typecheck");
 
 Function.isFunction = isFunction;
 Function.curryingCall = null;

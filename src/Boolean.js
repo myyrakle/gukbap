@@ -1,4 +1,4 @@
-const { isBoolean } = require("./../lib/typecheck");
+var { isBoolean } = require("./../lib/typecheck");
 
 Boolean.isBoolean = isBoolean;
 
