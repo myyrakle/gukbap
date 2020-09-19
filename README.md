@@ -66,6 +66,8 @@ console.log("foo".reversed()); // "oof"
 -   [String.prototype.forEach(callback)](./doc/String/forEach.md)
 -   [String.prototype.map(callback)](./doc/String/map.md)
 -   [String.prototype.reduce(callback, acc)](./doc/String/reduce.md)
+-   [String.prototype.leftPad(length, character)](./doc/String/leftPad.md)
+-   [String.prototype.rightPad(length, character)](./doc/String/rightPad.md)
 
 ##
 

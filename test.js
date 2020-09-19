@@ -1,6 +1,7 @@
 require("./index");
 
-console.log("12".rightPad(5, "0"));
+const str = "12";
+console.log(str.leftPad(5, "0")); // "00012"
 
 // const arr = [1, 2, 3, 4];
 // const cl = Object.assign({}, arr);
