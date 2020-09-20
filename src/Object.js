@@ -1,20 +1,8 @@
-function _deepClone(obj) {
-    if (obj === null || typeof obj !== "object") {
-        return obj;
-    }
-
-    var result = Array.isArray(obj) ? [] : {};
-
-    for (var key of Object.keys(obj)) {
-        result[key] = _deepClone(obj[key]);
-    }
-
-    return result;
-}
-
 Object.prototype.clone = function () {
     return Object.assign({}, this);
 };
+
+const deepClone = require("./../lib/deepClone");
 
 Object.prototype.deepClone = function () {
     return deepClone(this);
