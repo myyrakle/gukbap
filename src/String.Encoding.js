@@ -1,11 +1,84 @@
-String.fromUTF8Array = function (array) {
-    let out = "";
-    let len = array.length;
-    let i = 0;
-    let c;
+var UTF8_ONE_BYTE_MASK = 0b10000000;
+var UTF8_ONE_BYTE_COUNT = 0;
 
-    let char2;
-    let char3;
+var UTF8_TWO_BYTE_MASK = 0b11100000;
+var UTF8_TWO_BYTE_COUNT = 0b11000000;
+
+var UTF8_THREE_BYTE_MASK = 0b11110000;
+var UTF8_THREE_BYTE_COUNT = 0b11100000;
+
+var UTF8_FOUR_BYTE_MASK = 0b11111000;
+var UTF8_FOUR_BYTE_COUNT = 0b11110000;
+
+var UTF8_OTHER_MASK = 0b00111111;
+
+function _UTF8CodePointSize(text) {
+    if ((text & UTF8_ONE_BYTE_MASK) == UTF8_ONE_BYTE_COUNT) {
+        return 1;
+    }
+
+    if ((text & UTF8_TWO_BYTE_MASK) == UTF8_TWO_BYTE_COUNT) {
+        return 2;
+    }
+
+    if ((text & UTF8_THREE_BYTE_MASK) == UTF8_THREE_BYTE_COUNT) {
+        return 3;
+    }
+
+    // TODO: what should happen if a byte with prefix 0b10xxxxxx is passed?
+    return 4;
+}
+
+String.fromUTF8Array = function (array) {
+    var out = [];
+    for (var i = 0; i < array.length; ) {
+        var byte_count = _UTF8CodePointSize(array[i]);
+        var c = null;
+
+        switch (byte_count) {
+            case 1:
+                c = array[i] & ~UTF8_ONE_BYTE_MASK;
+                break;
+
+            case 2:
+                c =
+                    ((array[i] & ~UTF8_TWO_BYTE_MASK) << 6) |
+                    (array[i + 1] & UTF8_OTHER_MASK);
+                break;
+
+            case 3:
+                c =
+                    ((array[i] & ~UTF8_THREE_BYTE_MASK) << 12) |
+                    ((array[i + 1] & UTF8_OTHER_MASK) << 6) |
+                    (array[i + 2] & UTF8_OTHER_MASK);
+                break;
+
+            case 4:
+                c =
+                    ((array[i] & ~UTF8_FOUR_BYTE_MASK) << 18) |
+                    ((array[i + 1] & UTF8_OTHER_MASK) << 12) |
+                    ((array[i + 2] & UTF8_OTHER_MASK) << 6) |
+                    (array[i + 3] & UTF8_OTHER_MASK);
+                break;
+
+            // TODO: error handling?
+        }
+
+        i += byte_count;
+        console.log(c);
+        out.push(String.fromCodePoint(c));
+    }
+
+    return out.join("");
+};
+/*function (array) {
+    var out = "";
+    var len = array.length;
+    var i = 0;
+    var c;
+
+    var char2;
+    var char3;
 
     while (i < len) {
         c = array[i++];
@@ -19,19 +92,19 @@ String.fromUTF8Array = function (array) {
             case 6:
             case 7:
                 // 0xxxxxxx
-                out += String.fromCharCode(c);
+                out += String.fromCodePoint(c);
                 break;
             case 12:
             case 13:
                 // 110x xxxx   10xx xxxx
                 char2 = array[i++];
-                out += String.fromCharCode(((c & 0x1f) << 6) | (char2 & 0x3f));
+                out += String.fromCodePoint(((c & 0x1f) << 6) | (char2 & 0x3f));
                 break;
             case 14:
                 // 1110 xxxx  10xx xxxx  10xx xxxx
                 char2 = array[i++];
                 char3 = array[i++];
-                out += String.fromCharCode(
+                out += String.fromCodePoint(
                     ((c & 0x0f) << 12) |
                         ((char2 & 0x3f) << 6) |
                         ((char3 & 0x3f) << 0)
@@ -40,41 +113,29 @@ String.fromUTF8Array = function (array) {
         }
     }
     return out;
-};
+};*/
 
 String.fromUTF16Array = function (array) {
     return String.fromCharCode(...array);
 };
 
 String.fromUTF32Array = function (array) {
-    let out = [];
+    var out = [];
 
-    let h;
-    let l;
-    for (let i = 0; i < this.length; i++) {
-        const e = array[i];
-
-        if (e < 0x10000) {
-            h = 0;
-            l = e;
-            out.push(String.fromCharCode(e));
-            continue;
-        }
-        let t = e - 0x10000;
-        h = ((t << 12) >> 22) + 0xd800;
-        l = ((t << 22) >> 22) + 0xdc00;
-
-        out.push(h);
-        out.push(l);
+    var h;
+    var l;
+    for (var i = 0; i < array.length; i++) {
+        var e = array[i];
+        out.push(String.fromCodePoint(e));
     }
 
     return out.join("");
 };
 
 String.prototype.toUTF8Array = function () {
-    const utf8 = [];
-    for (let i = 0; i < this.length; i++) {
-        let charcode = this.charCodeAt(i);
+    var utf8 = [];
+    for (var i = 0; i < this.length; i++) {
+        var charcode = this.charCodeAt(i);
         if (charcode < 0x80) utf8.push(charcode);
         else if (charcode < 0x800) {
             utf8.push(0xc0 | (charcode >> 6), 0x80 | (charcode & 0x3f));
@@ -106,21 +167,21 @@ String.prototype.toUTF8Array = function () {
 };
 
 String.prototype.toUTF16Array = function () {
-    let arr = [];
-    for (let i = 0; i < this.length; i++) {
+    var arr = [];
+    for (var i = 0; i < this.length; i++) {
         arr[i] = this.charCodeAt(i);
     }
     return arr;
 };
 
 String.prototype.toUTF32Array = function () {
-    const highSurrogateValue = parseInt("1101100000000000", 2);
-    const lowSurrogateValue = parseInt("1101110000000000", 2);
+    var highSurrogateValue = parseInt("1101100000000000", 2);
+    var lowSurrogateValue = parseInt("1101110000000000", 2);
 
-    let arr = [];
+    var arr = [];
 
-    for (let i = 0; i < this.length; i++) {
-        let code = this.charCodeAt(i);
+    for (var i = 0; i < this.length; i++) {
+        var code = this.charCodeAt(i);
 
         if ((code & highSurrogateValue) == highSurrogateValue) {
             i++;
@@ -128,7 +189,7 @@ String.prototype.toUTF32Array = function () {
             if (i >= this.length) {
                 return null;
             }
-            const nextCode = this.charCodeAt(i);
+            var nextCode = this.charCodeAt(i);
 
             if ((nextCode & lowSurrogateValue) != lowSurrogateValue) {
                 return null;
