@@ -108,7 +108,22 @@ if (!Array.prototype.flat) {
 }
 
 Array.prototype.mapAsync = async function (callback) {
+    var mapped = [];
+
     for (var e of this) {
-        await callback(e);
+        mapped.push(await callback(e));
     }
+
+    return mapped;
+};
+
+Array.prototype.filterAsync = async function (callback) {
+    var filtered = [];
+
+    for (var e of this) {
+        if (await callback(e)) {
+            filtered.push(e);
+        }
+    }
+    return filtered;
 };
