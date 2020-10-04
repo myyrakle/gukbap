@@ -127,3 +127,13 @@ Array.prototype.filterAsync = async function (callback) {
     }
     return filtered;
 };
+
+Array.prototype.reduceAsync = async function (callback, init) {
+    var reduced = init;
+
+    for (var e of this) {
+        reduced = await callback(reduced, e);
+    }
+
+    return reduced;
+};
