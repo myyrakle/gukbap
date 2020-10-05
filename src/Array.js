@@ -107,6 +107,10 @@ if (!Array.prototype.flat) {
     };
 }
 
+Array.prototype.binarySearch = function (value) {
+    return -1;
+};
+
 Array.prototype.mapAsync = async function (callback) {
     var mapped = [];
 
