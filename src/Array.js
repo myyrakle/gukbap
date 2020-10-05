@@ -33,6 +33,8 @@ Array.prototype.sorted = function (compare) {
     return this.clone().sort(compare);
 };
 
+Array.prototype.sortNumber = function (compare) {};
+
 //immutable reverse function
 Array.prototype.reversed = function () {
     return this.clone().reverse();
