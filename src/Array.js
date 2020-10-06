@@ -113,6 +113,16 @@ Array.prototype.binarySearch = function (value) {
     return -1;
 };
 
+Array.prototype.count = function (callback) {
+    var n = 0;
+    for (var i = 0; i < this.length; i++) {
+        if (callback(this[i])) {
+            n++;
+        }
+    }
+    return n;
+};
+
 Array.prototype.mapAsync = async function (callback) {
     var mapped = [];
 
