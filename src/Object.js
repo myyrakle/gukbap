@@ -2,7 +2,7 @@ Object.prototype.clone = function () {
     return Object.assign({}, this);
 };
 
-const deepClone = require("./../lib/deepClone");
+//const deepClone = require("./../lib/deepClone");
 
 Object.prototype.deepClone = function () {
     return deepClone(this);
