@@ -1,5 +1,5 @@
 require("./index");
 
-let arr = [1, 3, 5, 2, 2, 3, 4, 5, 1, 2, 3];
+let str = "asdfasdfaaa";
 
-console.log(arr.count((e) => e % 2 == 0));
+console.log(str.count((e) => e == "a"));

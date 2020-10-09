@@ -67,6 +67,7 @@ console.log("foo".reversed()); // "oof"
 -   [String.prototype.reduce(callback, acc)](./doc/String/reduce.md)
 -   [String.prototype.leftPad(length, character)](./doc/String/leftPad.md)
 -   [String.prototype.rightPad(length, character)](./doc/String/rightPad.md)
+-   [String.prototype.count(callback)](./doc/String/count.md)
 
 ##
 
@@ -97,6 +98,7 @@ console.log("foo".reversed()); // "oof"
 -   [Array.prototype.sum()](./doc/Array/sum.md)
 -   [Array.prototype.average()](./doc/Array/average.md)
 -   [Array.prototype.flat()](./doc/Array/flat.md)
+-   [Array.prototype.count(callback)](./doc/Array/count.md)
 
 ##
 

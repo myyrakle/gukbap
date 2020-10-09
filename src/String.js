@@ -86,3 +86,13 @@ String.prototype.rightPad = function (len, character) {
 
     return self + pad;
 };
+
+String.prototype.count = function (callback) {
+    var n = 0;
+    for (var i = 0; i < this.length; i++) {
+        if (callback(this[i])) {
+            n++;
+        }
+    }
+    return n;
+};
